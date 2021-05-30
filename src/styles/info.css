@@ -1,0 +1,23 @@
+.card{
+    width: 50vw;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding:5px;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    text-align: start;
+    font-weight: bold;
+}
+h4 {
+    margin-top: 10px;
+    font-size: small;
+}
+h5{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size:revert;
+}

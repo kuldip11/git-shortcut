@@ -1,0 +1,30 @@
+.header-container{
+    width:100vw;
+    height: 90px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    /* position: relative; */
+
+}
+input{
+    margin: 20px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+button{
+    height: 25px;
+    
+}
+
+a.name{
+    position:absolute;
+    right:100px;
+    color:white;
+    text-decoration:none;
+    top:35px;
+}
