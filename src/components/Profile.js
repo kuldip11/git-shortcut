@@ -1,25 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../styles/profile.css';
 import StorageIcon from '@material-ui/icons/Storage';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
-const Profile = (props) => {
+import {infoContext} from '../App';
+
+const Profile = () => {
+    const [ user, setUser, userDetails ]= useContext(infoContext);
     return (
         <div className="profile-box">
-            <img src={props.picUrl} 
-                title={props.name} 
+            <img src={userDetails.avatar_url} 
+                title={user} 
                 style={{ borderRadius: '50%', 
                 height:'70px',
                 marginTop:'5px'
                 }}
             />
-            <h3>{props.name}</h3>
-            <h4 >{props.bio}</h4>
+            <>
+                <h3>{userDetails.name}</h3>
+                <h4 >{userDetails.bio}</h4>
+            </>
             <hr/>
-            <h5 ><StorageIcon style={{height:"15px"}}/> repositories {props.repoCount}</h5>
-            <h5><SupervisorAccountIcon style={{height:"20px"}}/> followers {props.folw}</h5>
+            <>
+                <h5 ><StorageIcon style={{height:"15px"}}/> repositories {userDetails.public_repos}</h5>
+                <h5><SupervisorAccountIcon style={{height:"20px"}}/> followers {userDetails.followers}</h5>
+            </>
             <hr/>
-            <h5><LocationOnIcon style={{height:"17px"}}/> location: {props.loc}</h5>
+            <h5><LocationOnIcon style={{height:"17px"}}/> location: {userDetails.location}</h5>
         </div>
     );
 };

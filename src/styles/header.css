@@ -18,7 +18,13 @@ input{
 }
 button{
     height: 25px;
-    
+    background-color: rgba(37, 35, 35, 0.5);
+    color: white;
+    margin: 2px;
+}
+button:hover{
+    background-color: rgba(100, 95, 95, 0.5);
+    border: 1px solid white
 }
 
 a.name{

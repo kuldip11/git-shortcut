@@ -2,28 +2,23 @@
 import './App.css';
 import Header from './components/Header';
 import Container from './components/Container'
-import React, {useState,useEffect} from 'react';
-function App() {
-  const [user,setUser]=useState("");
-  const [userDetails,setUserDetails]=useState("");
+import React, { useState, createContext } from 'react';
+export const infoContext=createContext([]);
 
-  const userHandler=(name)=>{
-    setUser(...name)
-  }
-  const detailsHandler=(details)=>{
-    setUserDetails(details)
-  }
-  // useEffect(()=>{console.log(user,"+",userDetails)},[user,userDetails])
+const App = () => {
+  const [ user, setUser ] = useState("");
+  const [ userDetails, setUserDetails ] = useState("");
+  const [ repoList, setRepoList ] = useState("");
+
 
   return (
     <div className="App">
-      <Header details={userDetails} userHandler={userHandler} detailsHandler={detailsHandler}/>
-
-      {user!=="" && <Container details={userDetails}/>}
-     
-     {/* <Footer/> */}
+      <infoContext.Provider value = {[user, setUser, userDetails, setUserDetails, repoList, setRepoList]} >
+        <Header/>
+        { user !== "" && <Container /> }
+        {/* <Footer/> */}
+      </infoContext.Provider>
     </div>
-  )
+  );
 }
-
 export default App;
