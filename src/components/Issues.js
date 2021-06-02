@@ -10,7 +10,7 @@ const Issues = () => {
     const issueHandler= async (val)=>{
         if(val!==""){
             fetch(`https://api.github.com/repos/${user}/${val}/issues`)
-            .then((res) => res.json())
+            .then((res) => {res.json()})
             .then((res)=>setResult(res))
             .then((res)=>setState(val))
             .then(()=>console.log(result,"=",state,"=",myStatus))
