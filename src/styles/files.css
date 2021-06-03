@@ -1,8 +1,8 @@
 .data-box{
-    margin: 23px 15px 0px 10px;
+    margin: 10px 1px 10px 20px;
     border:1px solid black;
     border-radius: 4px;
-    height: 80vh;
+    height: 75vh;
     width: 60vw;
     display: flex;
     flex-direction: column;

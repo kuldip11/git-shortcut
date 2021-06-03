@@ -2,6 +2,7 @@
 import './App.css';
 import Header from './components/Header';
 import Container from './components/Container'
+import Footer from './components/Footer';
 import React, { useState, createContext } from 'react';
 export const infoContext=createContext([]);
 
@@ -16,7 +17,7 @@ const App = () => {
       <infoContext.Provider value = {[user, setUser, userDetails, setUserDetails, repoList, setRepoList]} >
         <Header/>
         { user !== "" && <Container /> }
-        {/* <Footer/> */}
+        <Footer/>
       </infoContext.Provider>
     </div>
   );

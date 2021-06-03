@@ -1,0 +1,13 @@
+.link{
+    margin: 10px 10px 5px 10px;
+    text-decoration: none;
+    color:black;
+}
+.nave{
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.link:hover{
+    color: cornflowerblue;
+}

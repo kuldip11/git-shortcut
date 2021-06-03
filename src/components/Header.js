@@ -26,7 +26,7 @@ const Header = () => {
         <div className = "header-container">
 
             <GitHubIcon style = {{ height : '100%', marginLeft : '20px'}} />
-            <input className = "repo" onChange = {(e) => { setState(e.target.value) }} />
+            <input className = "repo" onChange = {(e) => { setState(e.target.value) }} placeholder="Enter username"/>
             <button type = "submit" name = "Submit" onClick = {urlHandler} >Search</button>
 
             {userDetails!== "" &&  

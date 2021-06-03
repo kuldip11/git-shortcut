@@ -8,6 +8,7 @@ import {
   import Repo from './Repo'
 import Issues from './Issues'
 import Wish from './Wish';
+import '../styles/router.css';
 export const wishListContext=createContext();
 const DetailsRouter = ({repoUrl}) => {
     const [wishList,setWishList] = useState([]);
