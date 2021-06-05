@@ -18,7 +18,7 @@ const App = () => {
       <infoContext.Provider value = {[user, setUser, userDetails, setUserDetails, repoList, setRepoList]} >
         <Header/>
         <div style={{height:"83vh"}}>
-        {/* { user === "" && <Container /> } */}
+        { user === "" && <h1>Welcome User!!</h1> }
           { user !== "" && <Container /> }
         </div>
         <Footer className="footer"/>
