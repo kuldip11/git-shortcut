@@ -1,8 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {wishListContext} from './DetailsRouter';
 import DeleteIcon from '@material-ui/icons/Delete';
-import '../styles/files.css';
-import '../styles/info.css';
+import '../../styles/files.css';
+import '../../styles/info.css';
 const Wish = () => {
     const [wishList,setWishList] = useContext(wishListContext);
     const [state,setState] = useState(0);

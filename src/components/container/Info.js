@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import '../styles/info.css'
+import '../../styles/info.css'
 import {wishListContext} from './DetailsRouter';
 const Info = (props) => {
     const [wishList,setWishList] = useContext(wishListContext);

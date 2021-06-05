@@ -1,7 +1,7 @@
 import React,{useState,useEffect,useContext} from 'react';
-import '../styles/files.css';
-import {infoContext} from '../App';
-import '../styles/files.css'
+import '../../styles/files.css';
+import {infoContext} from '../../App';
+import '../../styles/files.css'
 let myStatus
 const Issues = () => {
     const [user, setUser, userDetails, setUserDetails, repoList, setRepoList]= useContext(infoContext);

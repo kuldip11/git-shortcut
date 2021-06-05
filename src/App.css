@@ -4,8 +4,11 @@
   display:flex;
   flex-direction: column;
 }
-Footer{
-  align-items: flex-endS;
+footer{
+  align-content: flex-end;
+}
+.space{
+  height:75vh;
 }
 .App-logo {
   height: 40vmin;

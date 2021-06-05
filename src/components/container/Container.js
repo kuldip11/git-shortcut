@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Profile from './Profile';
 import Files from './Repo';
-import {infoContext} from '../App';
+import {infoContext} from '../../App';
 import DetailsRouter from './DetailsRouter';
 
 const Container = () => {

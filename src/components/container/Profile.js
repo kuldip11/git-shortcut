@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import '../styles/profile.css';
+import '../../styles/profile.css';
 import StorageIcon from '@material-ui/icons/Storage';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
-import {infoContext} from '../App';
+import {infoContext} from '../../App';
 
 const Profile = () => {
     const [ user, setUser, userDetails ]= useContext(infoContext);

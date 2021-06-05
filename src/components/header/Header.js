@@ -1,27 +1,26 @@
 import React,{useContext, useState} from 'react';
-import '../styles/header.css';
+import '../../styles/header.css';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import UserPicture from './UserPicture';
-import {infoContext} from '../App';
+import {infoContext} from '../../App';
 const Header = () => {
     const [state,setState]=useState("");
     const [user,setUser,userDetails,setUserDetails,page,setPage]= useContext(infoContext);
 
     const  urlHandler = () => {
         if(state!==""){
-        fetch(`https://api.github.com/users/${state}`)
-        .then((res) => res.json())
-        .then((res)=>setUserDetails(res))
-        .then((res)=>setUser(state))
-        .catch((err) =>alert(err.message))
+            
+            fetch(`https://api.github.com/users/${state}`)
+            .then((res) => res.json())
+            .then((res)=>setUserDetails(res))
+            .then(()=>setUser(state))
+            .catch((err) =>alert(err.message))
         }
         else{
-            alert("Invalid use name!!");
+            alert("Invalid user name!!");
         }   
     }
-    function butHandler(val){
-        setPage(val);
-    }
+
     return (
         <div className = "header-container">
 

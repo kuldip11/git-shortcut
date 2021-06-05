@@ -1,8 +1,8 @@
 import React,{useState,useEffect,useContext} from 'react';
 import Info from './Info';
-import '../styles/files.css';
-import {infoContext} from '../App';
-import repoHandler from '../url/repoApi';
+import '../../styles/files.css';
+import {infoContext} from '../../App';
+import repoHandler from '../../url/repoApi';
 
 const Repo = ({ repoUrl}) => {
     const [user, setUser, userDetails, setUserDetails, repoList, setRepoList]= useContext(infoContext);
