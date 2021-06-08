@@ -2,6 +2,7 @@ import React, { useState,  useContext } from 'react';
 import '../../styles/files.css';
 import { infoContext } from '../../App';
 import '../../styles/files.css'
+import notFound from '../../svg/notFound.svg';
 let myStatus
 const Issues = () => {
     const [user, setUser, userDetails, setUserDetails, repoList, setRepoList] = useContext(infoContext);
@@ -32,7 +33,12 @@ const Issues = () => {
                     placeholder="Enter repository name"
                 />
                 <hr />
-                {myStatus === 404 && <h3>No repositories found!</h3>}
+                {myStatus === 404 && 
+                <div style={{display:"flex",flexDirection:"column" ,alignContent:"center",justifyContent:"center",height:"30vh",width:"25vw",marginTop:"10vh"}}> 
+                    <img src = {notFound} alt="404"/>
+                    <h3>No such repositories found!</h3>
+                </div>
+                }
                 {myStatus === 200 && result.map((ele,idx) => (
                     <div className="card" key={idx}>
                         <a href={ele.html_url} style={{ textDecoration: "none", color: "black", marginBottom: "1px" }}>{ele.title}</a>

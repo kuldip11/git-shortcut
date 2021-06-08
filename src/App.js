@@ -1,11 +1,10 @@
-// import logo from './logo.svg';
+import welcome from './svg/welcome.svg';
 import './App.css';
 import Header from './components/header/Header';
 import Container from './components/container/Container'
 import Footer from './components/footer/Footer';
 import React, { useState, createContext } from 'react';
 export const infoContext=createContext([]);
-// import './svg/welcome.svg'
 
 const App = () => {
   const [ user, setUser ] = useState("");
@@ -18,8 +17,12 @@ const App = () => {
       <infoContext.Provider value = {[user, setUser, userDetails, setUserDetails, repoList, setRepoList]} >
         <Header/>
         <div style={{height:"83vh"}}>
-        { user === "" && <h1>Welcome User!!</h1> }
-          { user !== "" && <Container /> }
+        { user === "" && 
+          <div style={{display:"flex",alignContent:"center",justifyContent:"center",height:"30vh",marginTop:"20vh"}}> 
+            <img src = {welcome} alt="Welcome user!!"/>
+          </div> }
+
+        { user !== "" && <Container /> }
         </div>
         <Footer className="footer"/>
       </infoContext.Provider>

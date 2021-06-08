@@ -7,7 +7,7 @@ import { DeleteTwoTone } from "@ant-design/icons";
 const Wish = () => {
   const [wishList, setWishList] = useContext(wishListContext);
   localStorage.setItem("wishList", wishList);
-  
+
   const deleteHandler = (e, clickedItem) => {
     e.preventDefault();
     let newList = wishList.filter((item) => item.name !== clickedItem);
