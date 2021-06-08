@@ -9,7 +9,6 @@ const Header = () => {
 
     const  urlHandler = () => {
         if(state!==""){
-            
             fetch(`https://api.github.com/users/${state}`)
             .then((res) => res.json())
             .then((res)=>setUserDetails(res))
