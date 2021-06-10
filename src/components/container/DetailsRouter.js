@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Repo from "./Repo";
 import Issues from "./Issues";
@@ -7,6 +7,15 @@ import "../../styles/router.css";
 export const wishListContext = createContext();
 const DetailsRouter = ({ repoUrl }) => {
   const [wishList, setWishList] = useState([]);
+  
+  useEffect(() => {
+    const localStorageData = localStorage.getItem( JSON.stringify("wishList"));
+    if(localStorageData!==null){
+      
+    setWishList( [...localStorageData ])
+    }
+  }, [])
+  
   return (
     <Router>
       <div>

@@ -6,13 +6,12 @@ import { Result } from "antd";
 import { DeleteTwoTone } from "@ant-design/icons";
 const Wish = () => {
   const [wishList, setWishList] = useContext(wishListContext);
-  localStorage.setItem("wishList", wishList);
-
+  // localStorage.getItem(JSON.parse("wishList"));
   const deleteHandler = (e, clickedItem) => {
     e.preventDefault();
     let newList = wishList.filter((item) => item.name !== clickedItem);
     setWishList(newList);
-    localStorage.setItem("wishList", newList);
+    localStorage.setItem("wishList", JSON.stringify(newList));
   };
 
   return (
@@ -35,6 +34,7 @@ const Wish = () => {
             <div className="card" key={idx}>
               <a
                 href={ele.url}
+                target="_blank"
                 style={{
                   textDecoration: "none",
                   color: "black",

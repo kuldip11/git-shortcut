@@ -13,6 +13,7 @@ const Info = (props) => {
     <div className="card">
       <a
         href={props.url}
+        target="_blank"
         style={{ textDecoration: "none", color: "black", marginBottom: "1px" }}
       >
         {props.repoName}
