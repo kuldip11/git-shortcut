@@ -3,14 +3,13 @@ import './App.css';
 import Header from './components/header/Header';
 import Container from './components/container/Container'
 import Footer from './components/footer/Footer';
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 export const infoContext=createContext([]);
 
 const App = () => {
   const [ user, setUser ] = useState("");
   const [ userDetails, setUserDetails ] = useState("");
   const [ repoList, setRepoList ] = useState("");
-
 
   return (
     <div className="App">

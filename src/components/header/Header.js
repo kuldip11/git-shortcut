@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <div className="header-container">
-      <GitHubIcon style={{ height: "100%", marginLeft: "20px" }} />
+      <GitHubIcon style={{ height: "100%",width:"50px", marginLeft: "20px" }} />
       <input
         className="repo"
         onChange={(e) => {

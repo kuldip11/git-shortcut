@@ -8,13 +8,6 @@ export const wishListContext = createContext();
 const DetailsRouter = ({ repoUrl }) => {
   const [wishList, setWishList] = useState([]);
   
-  useEffect(() => {
-    const localStorageData = localStorage.getItem( JSON.stringify("wishList"));
-    if(localStorageData!==null){
-      
-    setWishList( [...localStorageData ])
-    }
-  }, [])
   
   return (
     <Router>

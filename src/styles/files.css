@@ -6,7 +6,7 @@
     width: 60vw;
     display: flex;
     flex-direction: column;
-    overflow:scroll;
+    overflow:auto;
     align-items: center;
 }
 button{
@@ -14,4 +14,24 @@ button{
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 2px;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+  
+::-webkit-scrollbar-track{
+    box-shadow: none; 
+    border-radius: 5px;
+}
+   
+  /* Handle */
+::-webkit-scrollbar-thumb{
+    background: rgb(110, 106, 106); 
+    border-radius: 10px;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(182, 174, 174); 
 }

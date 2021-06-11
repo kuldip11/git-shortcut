@@ -22,11 +22,11 @@ const Profile = () => {
             </>
             <hr/>
             <>
-                <h5 ><StorageIcon style={{height:"15px"}}/> repositories {userDetails.public_repos}</h5>
-                <h5><SupervisorAccountIcon style={{height:"20px"}}/> followers {userDetails.followers}</h5>
+                <h5 ><StorageIcon style={{height:"15px"}}/> Repositories {userDetails.public_repos}</h5>
+                <h5><SupervisorAccountIcon style={{height:"20px"}}/> Followers {userDetails.followers}</h5>
             </>
             <hr/>
-            <h5><LocationOnIcon style={{height:"17px"}}/> location: {userDetails.location}</h5>
+            <h5><LocationOnIcon style={{height:"17px"}}/> Location: {userDetails.location}</h5>
         </div>
     );
 };
