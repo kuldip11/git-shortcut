@@ -9,7 +9,7 @@ const Footer = () => {
                 <a href="https://github.com/kuldip11">
                     <GithubFilled  style = {{color:"white",marginLeft : '5px', marginTop : '10px'}} />
                 </a> |
-                <a href="https://github.com/kuldip11">
+                <a href="https://www.linkedin.com/in/kuldip-kumar-b90092188/">
                     <LinkedinFilled   style = {{color:"white",marginLeft : '5px', marginTop : '10px'}} />
                 </a>
 
