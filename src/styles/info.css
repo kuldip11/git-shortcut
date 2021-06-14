@@ -1,7 +1,7 @@
 .card{
     width: 50vw;
-    border: 1px solid black;
-    border-radius: 3px;
+    border: 1px solid rgb(187, 184, 184);
+    /* border-radius: 3px; */
     margin-top: 5px;
     margin-bottom: 5px;
     padding:5px;
@@ -11,26 +11,33 @@
     align-items: flex-start;
     text-align: start;
     font-weight: bold;
+    font-family: 'Segoe UI';
+    position: relative;
+}
+.card:hover{
+    border-color: black;
 }
 h4 {
     margin-top: 10px;
     font-size: small;
+    font-weight: normal;
 }
 h5{
     margin-top: 15px;
     margin-bottom: 10px;
     font-size:revert;
+    font-weight: normal;
 }
 .selector{
     border-radius:50%;
-    border:1px solid black;
+    border:1px solid rgb(155, 150, 150);
     height:10px;
     width:10px;
 }
 .selected{
     border-radius:50%;
-    border:1px solid black;
+    border:1px solid rgb(119, 119, 119);
     height:10px;
     width:10px;
-    background-color: black;
+    background-color: rgb(155, 155, 155);
 }

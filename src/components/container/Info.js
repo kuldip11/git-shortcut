@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import "../../styles/info.css";
 import { wishListContext } from "./DetailsRouter";
+import { CheckCircleOutlined, CheckCircleFilled   } from "@ant-design/icons";
+
 const Info = (props) => {
   const [wishList, setWishList] = useContext(wishListContext);
   const [state, setState] = useState(true);
@@ -11,16 +13,22 @@ const Info = (props) => {
   };
   return (
     <div className="card">
-      <a
-        href={props.url}
-        target="_blank"
-        style={{ textDecoration: "none", color: "black", marginBottom: "1px" }}
-      >
-        {props.repoName}
-      </a>
-      {props.dis !== null && <h5>{props.dis}</h5>}
+      <span>
+          <a
+            href={props.url}
+            target="_blank"
+            style={{ textDecoration: "none", color: "black", marginBottom: "1px" }}
+            
+          >
+            {props.repoName}
+          </a>
+        <span>
+          {state  && <CheckCircleOutlined style={{position:"absolute", right:"10px"}} onClick ={wishHandler} />}
+          {!state && <CheckCircleFilled style={{position:"absolute", right:"10px"}}/>}
+        </span>
+      </span>
+      {props.dis !== null && <h5 style={{fontFamily:"Segoe UI"}}>{props.dis}</h5>}
       {props.lang !== null && <h4>language: {props.lang}</h4>}
-      <div className={state ? "selector" : "selected"} onClick={wishHandler} />
     </div>
   );
 };

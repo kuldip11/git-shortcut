@@ -3,7 +3,7 @@ import { wishListContext } from "./DetailsRouter";
 import "../../styles/files.css";
 import "../../styles/info.css";
 import { Result } from "antd";
-import { DeleteTwoTone } from "@ant-design/icons";
+import { DeleteOutlined  } from "@ant-design/icons";
 const Wish = () => {
   const [wishList, setWishList] = useContext(wishListContext);
   const deleteHandler = (e, clickedItem) => {
@@ -38,13 +38,14 @@ const Wish = () => {
                     textDecoration: "none",
                     color: "black",
                     marginBottom: "1px",
+                    fontWeight:"normal"
                   }}
                 >
                   {ele.name}{" "}
                 </a>
                 <span>
-                  <DeleteTwoTone
-                    style={{ height: "15px", color: "black" }}
+                  <DeleteOutlined
+                    style={{ height: "15px", position:"absolute", right: "10px", top: "9px"}}
                     className={ele.name}
                     onClick={(e) => {
                       deleteHandler(e, ele.name);

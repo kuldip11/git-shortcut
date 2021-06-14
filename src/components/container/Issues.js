@@ -35,7 +35,7 @@ const Issues = () => {
               issueHandler(e.target.value);
             }
           }}
-          style={{ border: "2px solid black" }}
+          style={{ border: "1px solid rgb(71, 69, 69)", outline:"none" }}
           placeholder="Enter repository name"
         />
         <hr />
@@ -65,12 +65,13 @@ const Issues = () => {
                   textDecoration: "none",
                   color: "black",
                   marginBottom: "1px",
+                  fontFamily:"Segoe UI"
                 }}
               >
-                issue: {ele.title}
+                Title: {ele.title}
               </a>
-              <h5>created_at: {ele.created_at}</h5>
-              <h4>state: {ele.state}</h4>
+              <h4 style={{marginBottom:"2px"}}>state: {ele.state}</h4>
+              <h5 style={{marginTop:"2px"}}>created_at: {ele.created_at.split("T")[0]}</h5>
             </div>
           ))}
       </div>

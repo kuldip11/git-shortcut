@@ -29,8 +29,9 @@ button:hover{
 
 a.name{
     position:absolute;
-    right:100px;
+    right:80px;
     color:white;
     text-decoration:none;
     top:35px;
+    font-family: 'Segoe UI';
 }

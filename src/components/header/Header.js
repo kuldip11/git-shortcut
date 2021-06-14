@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
 import "../../styles/header.css";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import { GithubFilled } from "@ant-design/icons";
 import UserPicture from "./UserPicture";
 import { infoContext } from "../../App";
+
 const Header = () => {
   const [state, setState] = useState("");
   const [user, setUser, userDetails, setUserDetails, page, setPage] =
@@ -22,7 +24,7 @@ const Header = () => {
 
   return (
     <div className="header-container">
-      <GitHubIcon style={{ height: "100%",width:"50px", marginLeft: "20px" }} />
+      <GithubFilled style={{ fontSize: '350%', marginLeft:"20px"}} />
       <input
         className="repo"
         onChange={(e) => {

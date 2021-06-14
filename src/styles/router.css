@@ -1,12 +1,14 @@
 .link{
     margin: 10px 10px 5px 10px;
     text-decoration: none;
-    color:black;
+    color:rgb(0, 0, 0);
+    font-family: 'Segoe UI';
 }
 .nave{
     display:flex;
     justify-content: flex-start;
     align-items: flex-end;
+    margin-left: 10px;
 }
 .link:hover{
     color: cornflowerblue;

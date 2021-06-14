@@ -1,11 +1,12 @@
 .profile-box{
     margin: 18px 15px 0px 10px;
-    border:1px solid black;
-    border-radius: 4px;
-    height: 43vh;
+    border:1px solid rgb(71, 69, 69);
+    /* border-radius: 4px; */
+    height: 330px;
     width: 28vw;
     max-width: 300px;
     min-width: 150px;
-    min-height: 300px;
+    min-height: 320px;
     background-color: white;
+    font-family: 'Calibri';
 }

@@ -6,7 +6,7 @@ import {infoContext} from '../../App';
 const Repo = ({ repoUrl}) => {
     const [user, setUser, userDetails, setUserDetails, repoList, setRepoList]= useContext(infoContext);
 
-    const repoHandler = (repoUrl,setRepoList) => {
+    const repoHandler = () => {
         fetch(repoUrl)
             .then((res) => res.json())
             .then(res => {setRepoList(res)})
@@ -15,7 +15,7 @@ const Repo = ({ repoUrl}) => {
 
     useEffect( ()=>{
         if(user!=="" ){
-            repoHandler(repoUrl,setRepoList);
+            repoHandler();
         }
       },[user])
     
