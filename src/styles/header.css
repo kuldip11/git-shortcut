@@ -6,7 +6,6 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    /* position: relative; */
 
 }
 input{
@@ -21,10 +20,7 @@ input{
 
 }
 input.issue{
-    border: 1px silid black !important;
-}
-input:hover{
-    background-color: rgb(255, 255, 255);
+    border: 1px solid black !important;
 }
 button{
     height: 25px;

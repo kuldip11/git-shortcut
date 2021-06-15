@@ -4,8 +4,8 @@ import "../../styles/files.css";
 import "../../styles/info.css";
 import { Result } from "antd";
 import { DeleteOutlined  } from "@ant-design/icons";
-// import 'antd/dist/antd.css';
-// import { message,space } from 'antd';
+import 'antd/dist/antd.css';
+import { message,space } from 'antd';
 
 const Wish = () => {
   const [wishList, setWishList] = useContext(wishListContext);
@@ -13,7 +13,7 @@ const Wish = () => {
     e.preventDefault();
     let newList = wishList.filter((item) => item.name !== clickedItem);
     setWishList(newList);
-    // message.success('repository successfully deleted');
+    message.success('repository successfully deleted');
   };
 
   return (

@@ -1,9 +1,11 @@
 import React, { useState, useContext } from "react";
 import "../../styles/files.css";
 import { infoContext } from "../../App";
-import "../../styles/files.css";
 import notFound from "../../svg/notFound.svg";
+import 'antd/dist/antd.css';
+import { message, space } from 'antd';
 let myStatus ;
+
 const Issues = () => {
   const [user, setUser, userDetails, setUserDetails, repoList, setRepoList] =
     useContext(infoContext);
@@ -14,11 +16,11 @@ const Issues = () => {
 
       fetch(`https://api.github.com/repos/${user}/${val}/issues`)
         .then((res) => {myStatus=res.status; return res.json()})
-        .then((res) => setResult(res))
+        .then((res) => {setResult(res);console.log()})
         .then(() => setState(val))
-        .catch((res) => {myStatus = 404; alert(res.message)});
+        .then(() => {if(myStatus===404)message.warning("repository Not Found")})
     } else {
-      alert("Invalid use name!!");
+      message.warning("Enter Repository name");
     }
   };
 
