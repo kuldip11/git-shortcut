@@ -14,13 +14,13 @@ const DetailsRouter = ({ repoUrl }) => {
       <div>
         <div className="nave">
           <Link className="link" to="/">
-            repositories
+            Repositories
           </Link>
           <Link className="link" to="/issues">
-            issues
+            Issues
           </Link>
-          <Link className="link" to="/wish-list">
-            wish-list
+          <Link className="link" to="/wishlist">
+            Wishlist
           </Link>
         </div>
         <wishListContext.Provider value={[wishList, setWishList]}>
@@ -29,7 +29,7 @@ const DetailsRouter = ({ repoUrl }) => {
               <Issues />
             </Route>
 
-            <Route path="/wish-list">
+            <Route path="/wishlist">
               <Wish />
             </Route>
 

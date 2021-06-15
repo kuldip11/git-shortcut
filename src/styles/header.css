@@ -1,6 +1,6 @@
 .header-container{
     width:100vw;
-    height: 90px;
+    height: 70px;
     background-color: black;
     color: white;
     display: flex;
@@ -10,28 +10,39 @@
 
 }
 input{
-    margin: 20px;
-    height: 20px;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
+    margin: 15px !important;
+    color: black !important;
+    height: 30px !important;
+    padding: 5px !important;
+    border-radius: 10px 0px 10px 0px !important;
+    border: none ;
+    outline: none !important;
+    background-color: white !important;
+
+}
+input.issue{
+    border: 1px silid black !important;
+}
+input:hover{
+    background-color: rgb(255, 255, 255);
 }
 button{
     height: 25px;
-    background-color: rgba(37, 35, 35, 0.5);
+    background-color: rgba(139, 133, 133, 0.5);
     color: white;
     margin: 2px;
 }
 button:hover{
-    background-color: rgba(100, 95, 95, 0.5);
+    background-color: rgba(202, 199, 199, 0.5);
     border: 1px solid white
 }
 
 a.name{
+    font-family: 'Segoe UI';
     position:absolute;
-    right:80px;
+    right:60px;
     color:white;
     text-decoration:none;
-    top:35px;
+    top:25px;
     font-family: 'Segoe UI';
 }

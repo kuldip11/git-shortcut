@@ -4,12 +4,16 @@ import "../../styles/files.css";
 import "../../styles/info.css";
 import { Result } from "antd";
 import { DeleteOutlined  } from "@ant-design/icons";
+// import 'antd/dist/antd.css';
+// import { message,space } from 'antd';
+
 const Wish = () => {
   const [wishList, setWishList] = useContext(wishListContext);
   const deleteHandler = (e, clickedItem) => {
     e.preventDefault();
     let newList = wishList.filter((item) => item.name !== clickedItem);
     setWishList(newList);
+    // message.success('repository successfully deleted');
   };
 
   return (
@@ -24,7 +28,7 @@ const Wish = () => {
               alignItems: "center",
             }}
           >
-            <Result status="404" subTitle="Sorry, your Wish-list is Empty.." />
+            <Result status="404" subTitle="Sorry, your Wishlist is Empty..." />
           </div>
         )}
         {wishList.length > 0 &&

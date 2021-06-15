@@ -3,7 +3,7 @@ import "../../styles/files.css";
 import { infoContext } from "../../App";
 import "../../styles/files.css";
 import notFound from "../../svg/notFound.svg";
-let myStatus;
+let myStatus ;
 const Issues = () => {
   const [user, setUser, userDetails, setUserDetails, repoList, setRepoList] =
     useContext(infoContext);
@@ -11,15 +11,12 @@ const Issues = () => {
   const [result, setResult] = useState([]);
   const issueHandler = async (val) => {
     if (val !== "") {
-      fetch(`https://api.github.com/repos/${user}/${val}/issues`).then(
-        (res) => (myStatus = res.status)
-      );
 
       fetch(`https://api.github.com/repos/${user}/${val}/issues`)
-        .then((res) => res.json())
+        .then((res) => {myStatus=res.status; return res.json()})
         .then((res) => setResult(res))
         .then(() => setState(val))
-        .catch((res) => alert(res.message));
+        .catch((res) => {myStatus = 404; alert(res.message)});
     } else {
       alert("Invalid use name!!");
     }
@@ -29,6 +26,7 @@ const Issues = () => {
     <div className="discription">
       <div className="data-box">
         <input
+          className="issue"
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               setState(e.target.value);
@@ -52,7 +50,7 @@ const Issues = () => {
             }}
           >
             <img src={notFound} alt="404" />
-            <h3>No such repositories found!</h3>
+            <h3>No such Issue found!</h3>
           </div>
         )}
         {myStatus === 200 &&
@@ -68,7 +66,7 @@ const Issues = () => {
                   fontFamily:"Segoe UI"
                 }}
               >
-                Title: {ele.title}
+              {ele.title}
               </a>
               <h4 style={{marginBottom:"2px"}}>state: {ele.state}</h4>
               <h5 style={{marginTop:"2px"}}>created_at: {ele.created_at.split("T")[0]}</h5>

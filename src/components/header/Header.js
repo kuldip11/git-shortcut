@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import "../../styles/header.css";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import { GithubFilled } from "@ant-design/icons";
+import 'antd/dist/antd.css';
+import { message, space } from 'antd';
 import UserPicture from "./UserPicture";
 import { infoContext } from "../../App";
 
@@ -14,17 +16,25 @@ const Header = () => {
     if (state !== "") {
       fetch(`https://api.github.com/users/${state}`)
         .then((res) => res.json())
-        .then((res) => setUserDetails(res))
-        .then(() => setUser(state))
-        .catch((err) => alert(err.message));
+        .then((res) => {
+          if (res.message) {
+            message.warning("User Not Found");
+          }
+          else{
+            setUserDetails(res)
+            setUser(state)
+          }
+          console.log(res)
+        })
+        .catch((err) => alert("user not found"));
     } else {
-      alert("Invalid user name!!");
+      message.warning('Enter the user name');
     }
   };
 
   return (
     <div className="header-container">
-      <GithubFilled style={{ fontSize: '350%', marginLeft:"20px"}} />
+      <GithubFilled style={{ fontSize: '250%', marginLeft: "20px" }} />
       <input
         className="repo"
         onChange={(e) => {

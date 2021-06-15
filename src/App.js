@@ -15,7 +15,7 @@ const App = () => {
     <div className="App">
       <infoContext.Provider value = {[user, setUser, userDetails, setUserDetails, repoList, setRepoList]} >
         <Header/>
-        <div style={{height:"83vh"}}>
+        <div style={{height:"86vh"}}>
         { user === "" && 
           <div style={{display:"flex",alignContent:"center",justifyContent:"center",height:"30vh",marginTop:"20vh"}}> 
             <img src = {welcome} alt="Welcome user!!"/>
