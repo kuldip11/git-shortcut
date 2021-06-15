@@ -4,11 +4,11 @@ import { infoContext } from "../../App";
 import notFound from "../../svg/notFound.svg";
 import 'antd/dist/antd.css';
 import { message, space } from 'antd';
+import debounce from "just-debounce-it";
 let myStatus ;
 
 const Issues = () => {
-  const [user, setUser, userDetails, setUserDetails, repoList, setRepoList] =
-    useContext(infoContext);
+  const [user, setUser, userDetails, setUserDetails, repoList, setRepoList] = useContext(infoContext);
   const [state, setState] = useState("");
   const [result, setResult] = useState([]);
   const issueHandler = async (val) => {
@@ -24,17 +24,20 @@ const Issues = () => {
     }
   };
 
+  const debounceIssue = debounce(issueHandler, 1000);
+
   return (
     <div className="discription">
       <div className="data-box">
         <input
           className="issue"
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              setState(e.target.value);
-              issueHandler(e.target.value);
-            }
-          }}
+          // onKeyDown={(e) => {
+          //   if (e.key === "Enter") {
+          //     setState(e.target.value);
+          //     issueHandler(e.target.value);
+          //   }
+          // }}
+          onChange={(text) => {debounceIssue(text.target.value)}}
           style={{ border: "1px solid rgb(71, 69, 69)", outline:"none" }}
           placeholder="Enter repository name"
         />
